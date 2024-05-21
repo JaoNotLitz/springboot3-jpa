@@ -1,12 +1,22 @@
 package com.alfajoj.course.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+
+@Entity
+@Table(name="tb_user")
 public class User implements Serializable {
     private static final long serialVersionUID =1L;
 
+    //fala para o programa em SQL q esse é o id e que ele deve se autoincrementar
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
     private String name;
     private String email;
     private String phone;
